@@ -8,13 +8,6 @@ window.onload = function() {
     var artistNameSearch = document.getElementById('artistSearch').value;
     var methodGet = document.getElementById('artistPick').value;
 
-
-   var methodGetInfo = "getInfo";
-   var methodGetTopAlbums = "getTopAlbums";
-   var methodGetTopTracks = "getTopTracks";
-
-   //var methodGet = methodGetTopAlbums;
-
     $.ajax({
       url: "http://ws.audioscrobbler.com/2.0/?method=" + ("artist." + methodGet) + "&" + ("artist=" + artistNameSearch) + oopsLastFM_apiKey,
       dataType: 'jsonp',
