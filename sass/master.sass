@@ -1,0 +1,21 @@
+// compileNested: ../css/master.css
+$font-stack:    Helvetica, sans-serif
+$primary-color: #333
+
+body
+  font: 100% $font-stack
+  color: $primary-color
+
+.wrap
+	perspective: 800px
+	perspective-origin: 50% 100px
+
+.cube
+	position: relative
+	width: 200px
+	transform-style: preserve-3d
+
+.cube div
+	position: absolute
+	width: 200px
+	height: 200px
