@@ -1,61 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title></title>
+    <title>Music Yooooooo</title>
     <link rel="stylesheet" type="text/css" href="css/master.css">
-    <link rel="stylesheet" type="text/css" href="css/tools/animate_v3.5.1_.css">
-    <link rel="stylesheet" type="text/css" href="css/tools/font-awesome-v4.5.0/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-2.2.1.js" integrity="sha256-eNcUzO3jsv0XlJLveFEkbB8bA7/CroNpNVk3XpmnwHc=" crossorigin="anonymous"></script>
-    <script type="application/javascript" src="js/tools/p5.js_v0.4.22/p5.min.js"></script>
-    <script type="application/javascript" src="js/tools/p5.js_v0.4.22/addons/p5.dom.min.js"></script>
-    <script type="application/javascript" src="js/tools/p5.js_v0.4.22/addons/p5.sound.min.js"></script>
     <script type="application/javascript" src="js/tools/handlebars-v4.0.5.js"></script>
     <script type="application/javascript" src="js/apiKey.js"></script>
     <script type="application/javascript" src="js/main.js"></script>
   </head>
   <body>
-    <form>
+    <div id="fullScreen"></div>
+   <div id="wrap">
       <input type="text" placeholder="Artist Name" id="artistSearch">
-      <select id="artistPick">
-        <option value="getInfo">Info</option>
-        <option value="getTopAlbums">Top Albums</option>
-        <option value="getTopTracks">Top Tracks</option>
-      </select>
-    </form><br><br>
-    <button type="submit" id="submit-btn">Search   </button><br><br>
-    <div id="template-container"></div><br>
-    <div id="template-container-one"></div><br>
-    <div id="template-container-Two"></div><br>
-    <script id="widget" type="text/x-handlebars-template"> 
-      <p>
-        Name:
-        {{artist.name}}
-      </p>
-      <p>
-        Summary:
-        {{artist.bio.summary}} 
-      </p>{{#each artist.tags.tag}}
-      <li>
-      {{name}}
-      </li>
-      {{/each}}  
+      <button type="submit" id="submit-btn">Search</button>
+      <br>
+      <br>
+      <div class="center">
+        <img id="artistImage" src="" alt="" />
+      </div>
+      <div id="templateContainer-Zero"></div><br>
+      <div id="templateContainer-Music"></div><br>
+      <div id="templateContainer-URL"></div><br>
+      <div id="templateContainer-Gif"></div><br>
+
+      <div id="RelatedArtists">
+        <li>
+        <h1 id="nameOne"></h1>
+        <div id="templateContainer-RelatedArtists-One"></div>
+        </li>
+
+        <li>
+        <h1 id="nameTwo"></h1>
+        <div id="templateContainer-RelatedArtists-Two"></div>
+        </li>
+
+        <li>
+        <h1 id="nameTree"></h1>
+        <div id="templateContainer-RelatedArtists-Three"></div>
+        </li>
+
+        <li>
+        <h1 id="nameFour"></h1>
+        <div id="templateContainer-RelatedArtists-Four"></div>
+        </li>
+
+        <li>
+        <h1 id="nameFive"></h1>
+        <div id="templateContainer-RelatedArtists-Five"></div>
+        </li>
+     </div>
+
+    </div>
+
+    <script id="basicInfo" type="text/x-handlebars-template">
+      <h1>{{artist.name}}</h1>
+      <nav>
+        <ul>
+      {{#each artist.tags.tag}}
+      <li>{{name}}</li>
+      {{/each}}
+        </ul>
+      </nav>
+      <br>
+      <p>{{artist.bio.summary}}</p>
+      <h2>Top Tracks</h2>
     </script>
-    <script id="widgetOne" type="text/x-handlebars-template">
+
+    <script id="artistURL" type="text/x-handlebars-template">
+      <h2>Social Media</h2>
       {{#each data.urls}}
       <li><a href="{{this}}" target="_blank">{{this}}</a></li>
       {{/each}}
+      <h2>Gif</h2>
     </script>
-    <script id="widgetTwo" type="text/x-handlebars-template">
-      {{#each data.releases}}
-      <li>
-      <p>{{artist}}</p></li>
-      <li>
-      <p>{{title}}</p></li>
-      <li>
-      <p>{{year}}</p></li>
-      <br>
-      </hr>
+
+    <script id="music" type="text/x-handlebars-template">
+    {{#each tracks}}
+    <div class="musicThumb">
+      <audio id="sound" preload="auto">
+        <source src="{{preview_url}}" />
+      </audio>
+      {{#each album.images}}
+      <img src="{{url}}">
+      {{/each}}
+      <h4>{{name}}</h4>
+    </div>
+    {{/each}}
+    </script>
+
+    <script id="gif" type="text/x-handlebars-template">
+      {{#each data}}
+      <a href="{{embed_url}}"><img src="{{images.original.url}}" alt="{{slug}}" /></a>
+      {{/each}}
+      <h2>Related Artists</h2>
+
+    </script>
+
+    <script id="relatedList-One" type="text/x-handlebars-template">
+      {{#each tracks}}
+      <div class="musicThumb">
+        <audio id="sound" preload="auto">
+          <source src="{{preview_url}}" />
+        </audio>
+        {{#each album.images}}
+        <img src="{{url}}">
+        {{/each}}
+        <h4>{{name}}</h4>
+      </div>
       {{/each}}
     </script>
+
+    <script id="relatedList-Two" type="text/x-handlebars-template">
+      <h1 id="nameTwo"></h1>
+      {{#each tracks}}
+      <div class="musicThumb">
+        <audio id="sound" preload="auto">
+          <source src="{{preview_url}}" />
+        </audio>
+        {{#each album.images}}
+        <img src="{{url}}">
+        {{/each}}
+        <h4>{{name}}</h4>
+      </div>
+      {{/each}}
+    </script>
+
+    <script id="relatedList-Three" type="text/x-handlebars-template">
+      <h1 id="nameThree"></h1>
+      {{#each tracks}}
+      <div class="musicThumb">
+        <audio id="sound" preload="auto">
+          <source src="{{preview_url}}" />
+        </audio>
+        {{#each album.images}}
+        <img src="{{url}}">
+        {{/each}}
+       <h4>{{name}}</h4>
+      </div>
+      {{/each}}
+    </script>
+
+    <script id="relatedList-Four" type="text/x-handlebars-template">
+      <h1 id="nameFour"></h1>
+      {{#each tracks}}
+      <div class="musicThumb">
+        <audio id="sound" preload="auto">
+          <source src="{{preview_url}}" />
+        </audio>
+        {{#each album.images}}
+        <img src="{{url}}">
+        {{/each}}
+        <h4>{{name}}</h4>
+      </div>
+      {{/each}}
+    </script>
+
+    <script id="relatedList-Five" type="text/x-handlebars-template">
+      <h1 id="nameFive"></h1>
+      {{#each tracks}}
+      <div class="musicThumb">
+        <audio id="sound" preload="auto">
+          <source src="{{preview_url}}" />
+        </audio>
+        {{#each album.images}}
+        <img src="{{url}}">
+        {{/each}}
+        <h4>{{name}}</h4>
+      </div>
+      {{/each}}
+    </script>
+
   </body>
 </html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/master.css">
+    <script src="https://code.jquery.com/jquery-2.2.1.js" integrity="sha256-eNcUzO3jsv0XlJLveFEkbB8bA7/CroNpNVk3XpmnwHc=" crossorigin="anonymous"></script>
+    <script type="application/javascript" src="js/tools/handlebars-v4.0.5.js"></script>
+    <script type="application/javascript" src="js/apiKey.js"></script>
+    <script type="application/javascript" src="js/main.js"></script>
+  </head>
+  <body>
+   <div id="wrap">
+      <input type="text" placeholder="Artist Name" id="artistSearch">
+      <button type="submit" id="submit-btn">Search</button>
+      <br>
+      <br>
+      <img id="artistImage" src="" alt="" />
+      <div id="templateContainer-Zero"></div>
+      <div id="templateContainer-Music"></div>
+      <div id="templateContainer-URL"></div>
+      <div id="templateContainer-Gif"></div>
+
+      <div id="RelatedArtists">
+        <div id="templateContainer-RelatedArtists-One">
+          <h1 id="nameOne"></h1>
+        </div>
+
+        <h1 id="nameTwo"></h1>
+        <div id="templateContainer-RelatedArtists-Two"></div>
+
+
+        <div id="templateContainer-RelatedArtists-Three">
+          <h1 id="nameTree"></h1>
+        </div>
+
+
+        <div id="templateContainer-RelatedArtists-Four">
+          <h1 id="nameFour"></h1>
+        </div>
+
+
+        <div id="templateContainer-RelatedArtists-Five">
+          <h1 id="nameFive"></h1>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+    <script id="basicInfo" type="text/x-handlebars-template">
+      <h1>{{artist.name}}</h1>
+      <p>{{artist.bio.summary}}</p>
+      {{#each artist.tags.tag}}
+      <li>{{name}}</li>
+
+      <!-- <li class="like" ="+"</li>
+           <li class="isOk" = "="</li>
+           <li class="boo" = "-"</li> -->
+
+      <li class="like" ="+"</li>
+        <h3> Likes: <span class="like"></span> </h3>
+      </li>
+      <li class="isOk" = "="</li>
+      <li class="boo" = "-"</li>
+
+      {{/each}}
+    </script>
+
+
+
+
+
+    <script id="artistURL" type="text/x-handlebars-template">
+      {{#each data.urls}}
+      <li><a href="{{this}}" target="_blank">{{this}}</a></li>
+      {{/each}}
+    </script>
+
+    <script id="music" type="text/x-handlebars-template">
+    {{#each tracks}}
+    <div class="musicThumb">
+      <audio id="sound" preload="auto">
+        <source src="{{preview_url}}" />
+      </audio>
+      {{#each album.images}}
+      <img src="{{url}}">
+      {{/each}}
+      <h4>{{name}}</h4>
+    </div>
+    {{/each}}
+    </script>
+
+    <script id="gif" type="text/x-handlebars-template">
+      {{#each data}}
+      <a href="{{embed_url}}"><img src="{{images.original.url}}" alt="{{slug}}" /></a>
+      {{/each}}
+    </script>
+
+    <script id="relatedList-One" type="text/x-handlebars-template">
+      {{#each tracks}}
+      <div class="musicThumb">
+        <audio id="sound" preload="auto">
+          <source src="{{preview_url}}" />
+        </audio>
+        {{#each album.images}}
+        <img src="{{url}}">
+        {{/each}}
+        <h4>{{name}}</h4>
+      </div>
+      {{/each}}
+    </script>
+
+    <script id="relatedList-Two" type="text/x-handlebars-template">
+      <h1 id="nameTwo"></h1>
+      {{#each tracks}}
+      <div class="musicThumb">
+        <audio id="sound" preload="auto">
+          <source src="{{preview_url}}" />
+        </audio>
+        {{#each album.images}}
+        <img src="{{url}}">
+        {{/each}}
+        <h4>{{name}}</h4>
+      </div>
+      {{/each}}
+    </script>
+
+    <script id="relatedList-Three" type="text/x-handlebars-template">
+      <h1 id="nameThree"></h1>
+      {{#each tracks}}
+      <div class="musicThumb">
+        <audio id="sound" preload="auto">
+          <source src="{{preview_url}}" />
+        </audio>
+        {{#each album.images}}
+        <img src="{{url}}">
+        {{/each}}
+       <h4>{{name}}</h4>
+      </div>
+      {{/each}}
+    </script>
+
+    <script id="relatedList-Four" type="text/x-handlebars-template">
+      <h1 id="nameFour"></h1>
+      {{#each tracks}}
+      <div class="musicThumb">
+        <audio id="sound" preload="auto">
+          <source src="{{preview_url}}" />
+        </audio>
+        {{#each album.images}}
+        <img src="{{url}}">
+        {{/each}}
+        <h4>{{name}}</h4>
+      </div>
+      {{/each}}
+    </script>
+
+    <script id="relatedList-Five" type="text/x-handlebars-template">
+      <h1 id="nameFive"></h1>
+      {{#each tracks}}
+      <div class="musicThumb">
+        <audio id="sound" preload="auto">
+          <source src="{{preview_url}}" />
+        </audio>
+        {{#each album.images}}
+        <img src="{{url}}">
+        {{/each}}
+        <h4>{{name}}</h4>
+      </div>
+      {{/each}}
+    </script>
+
+  </body>
+</html>

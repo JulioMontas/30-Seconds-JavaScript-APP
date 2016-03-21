@@ -1,3 +1,266 @@
-body {
-  font: 100% Helvetica, sans-serif;
-  color: #333; }
+html, body{margin:0;}
+
+body{
+  background: url(http://media1.giphy.com/media/NHDTpNkFnpoU8/giphy.gif) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: helvetica;
+ }
+
+img:nth-child(2),
+img:nth-child(4){
+  display: none;}
+
+
+  .musicThumb {
+      background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
+      color: white;
+      margin-bottom: 20px;
+      padding-bottom: 3px;
+      text-align: center;
+  }
+  .musicThumb:hover {
+      background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+  }
+
+  .musicThumb:last-child {
+    margin-bottom: 0;
+}
+
+
+
+/*#wrap {
+  left: 0;
+  padding: 30px;
+  position: absolute;
+  top: 0px;
+  z-index: 2;}*/
+
+/* New css files */
+#fullScreen {
+    background: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+}
+.center {
+    text-align: center;
+}
+
+
+.center img#artistImage {
+  border: 2px solid white;
+  border-radius: 240px;
+  height: 250px;
+  width: 250px;
+}
+
+#templateContainer-Music .musicThumb img {
+    opacity: 0.6;
+    width: 640px;
+}
+
+
+#templateContainer-Music .musicThumb img:hover {
+    opacity: 0.9;}
+
+
+#templateContainer-Music {
+    border: 10px solid white;
+    margin: 70px auto 0;
+    width: 44.6%;
+}
+
+
+
+
+#templateContainer-Zero {text-align: center;}
+
+#templateContainer-Zero nav {
+    margin-bottom: -13px;
+    margin-top: -33px;
+}
+
+
+#templateContainer-Zero h1, p {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 6px 0 0 rgba(255, 255, 255, 0.8), -6px 0 0 rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+}
+#templateContainer-Zero h1 {
+    display: inline-block;
+    font-size: 55px;
+    padding: 12px 20px 5px;
+}
+
+
+
+
+
+
+#templateContainer-Zero h2 {
+    background: rgba(255, 255, 255, 0.4) none repeat scroll 0 0;
+    border: 5px solid white;
+    display: inline-block;
+    font-size: 50px;
+    margin-bottom: -40px;
+    margin-top: 100px;
+    padding: 40px 290px;
+}
+
+#templateContainer-URL h2 {
+    background: rgba(255, 255, 255, 0.4) none repeat scroll 0 0;
+    border: 5px solid white;
+    display: inline-block;
+    font-size: 50px;
+    padding: 40px 290px;
+}
+
+#templateContainer-Gif h2 {
+    background: rgba(255, 255, 255, 0.4) none repeat scroll 0 0;
+    border: 5px solid white;
+    display: inline-block;
+    font-size: 50px;
+    margin: 50px auto -53px;
+    padding: 40px 505px;
+}
+
+
+
+
+
+
+
+
+
+
+#templateContainer-Zero p {
+    color: #333;
+    display: inline;
+    font-size: 30px;
+    font-weight: 100;
+    letter-spacing: 1.5px;
+    line-height: 60px;
+    padding: 13px 8px 14px;
+    transition: all 0.5s ease 0s;}
+
+#templateContainer-Zero p:hover {font-weight: 300;}
+
+#templateContainer-Zero nav ul {list-style: none}
+
+#templateContainer-Zero nav ul li {
+    background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
+    display: inline-block;
+    letter-spacing: 1.5px;
+    margin-left: 20px;
+    padding: 16px;
+    text-decoration: inherit;
+    text-transform: uppercase;}
+
+#templateContainer-URL {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    text-align: center;}
+
+#templateContainer-URL li {
+    background: rgba(255, 255, 255, 0.3) none repeat scroll 0 0;
+    list-style: outside none none;
+    margin-bottom: 1px;
+    padding: 30px 0;
+    transition: all 0.5s ease 0s;}
+
+#templateContainer-URL li:hover {background: rgba(255, 255, 255, 0.7) none repeat scroll 0 0;}
+
+#templateContainer-URL li a {
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: 1.5px;
+    text-decoration: none;}
+
+#templateContainer-URL li a:hover{color: #333;}
+
+#templateContainer-Gif {
+    margin: 60px auto 0;
+    width: 100%;}
+
+#templateContainer-Gif a img {
+  width: 12%;
+  opacity: 0.3;}
+
+#templateContainer-Gif a img:hover {
+  opacity: 0.9;
+  scale: ;
+  transform: scale(2,3);
+  border: 2px solid white;}
+
+#RelatedArtists {
+    display: block;
+    margin: 120px auto 0;
+    width: 100%;}
+
+#RelatedArtists img {width: 227px;}
+
+#RelatedArtists h1 {
+    color: #fff;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+#RelatedArtists li .musicThumb h4 {
+    font-size: 14px;
+    letter-spacing: 1px;}
+
+#RelatedArtists li .musicThumb {
+    margin-bottom: 40px;
+    opacity: 0.4;
+    border: 1px solid white;}
+
+#RelatedArtists li .musicThumb:hover {
+    opacity: 1;
+    border: 1px solid white;}
+
+#RelatedArtists > li {
+    float: left;
+    list-style: outside none none;
+    margin-left: 45px;}
+
+#templateContainer-RelatedArtists-One,
+#templateContainer-RelatedArtists-Two,
+#templateContainer-RelatedArtists-Three,
+#templateContainer-RelatedArtists-Four,
+#templateContainer-RelatedArtists-Five {
+    width: 229px;}
+
+
+/*#templateContainer-RelatedArtists-One,
+#templateContainer-RelatedArtists-Two,
+#templateContainer-RelatedArtists-Three,
+#templateContainer-RelatedArtists-Four,
+#templateContainer-RelatedArtists-Five{
+  float: left;
+}*/
+
+/*#templateContainer-RelatedArtists-One{
+  background: red;
+}
+#templateContainer-RelatedArtists-Two{
+  background: yellow;
+}
+#templateContainer-RelatedArtists-Three{
+  background: gold;
+}
+#templateContainer-RelatedArtists-Four{
+  background: green;
+}
+#templateContainer-RelatedArtists-Five{
+  background: orange;
+}*/
