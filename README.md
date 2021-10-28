@@ -1,2 +1,7 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project #2: Music Yooooooo by Julio Montas
-Search for your favorite artist
+# 30 SECONDS: Music artist "wikipedia" with 30 second song previews
+Search for your favorite artist to find out
+- Biography 
+- Latest track
+- Social media links
+- GIFs
+- Related artist latest songs to discover music to mix
